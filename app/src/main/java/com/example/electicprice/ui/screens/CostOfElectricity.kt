@@ -65,7 +65,6 @@ fun CostOfElectricity(modifier: Modifier = Modifier) {
                 price = it
                 calculateResult()
             },
-            onValueChangeFinished = { calculateResult() },
             valueRange = 0f..1f,
             steps = 99
         )
