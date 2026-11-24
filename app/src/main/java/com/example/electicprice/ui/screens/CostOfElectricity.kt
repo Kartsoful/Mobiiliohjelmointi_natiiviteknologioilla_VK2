@@ -1,8 +1,5 @@
 package com.example.electicprice.ui.screens
 
-import android.text.style.BackgroundColorSpan
-import android.util.Log
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,14 +13,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.electicprice.ui.components.Heading
 import com.example.electicprice.ui.components.NumericField
@@ -34,11 +29,6 @@ fun CostOfElectricity(modifier: Modifier = Modifier) {
     var price by remember { mutableFloatStateOf(0f) }
     var taxIncluded: Boolean by remember { mutableStateOf(false) }
     var result by remember { mutableFloatStateOf(0f) }
-
-    Log.d("Consumption", consumption)
-    Log.d("price", price.toString())
-    Log.d("taxIncluded", taxIncluded.toString())
-    Log.d("result", result.toString())
 
     fun calculateResult() {
         val amount = consumption.toFloatOrNull() ?: 0f
