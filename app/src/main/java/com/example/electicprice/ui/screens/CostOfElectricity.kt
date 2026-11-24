@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -95,17 +96,18 @@ fun CostOfElectricity(modifier: Modifier = Modifier) {
         }
 
         Row(
-            horizontalArrangement = Arrangement.Center,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center
         ) {
-            Text(
-                text = "%.2f €".format(result),
-                modifier = Modifier
-                    .background(MaterialTheme.colorScheme.primary)
-                    .padding(6.dp),
-                textAlign = TextAlign.Center,
-                color = Color.White
-            )
+            Surface(
+                color = MaterialTheme.colorScheme.primary
+            ) {
+                Text(
+                    text = "%.2f €".format(result),
+                    modifier = Modifier.padding(6.dp),
+                    color = Color.White
+                )
+            }
         }
     }
 }
